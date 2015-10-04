@@ -13,6 +13,24 @@ When you click the **Knit** button a document will be generated that includes bo
 summary(cars)
 ```
 
+```{r read-in-data}
+gap.in <- read.table("output/combined_gapMinder.tsv", sep="\t", header=TRUE)
+
+# summary(gap.in)
+# gap.in$pop
+# gap.in[,2:3]
+
+library("dplyr")
+
+gap.in %>% 
+  select(year, pop,country, continent) %>%
+  filter(year == 2002) %>%
+  group_by(continent) %>%
+  summarise(mean = mean(pop))
+
+```
+
+
 You can also embed plots, for example:
 
 ```{r, echo=FALSE}
