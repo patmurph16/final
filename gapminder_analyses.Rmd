@@ -18,15 +18,27 @@ summary(gap.in)
 We are interested in GDP vs year for three countries: Australia, the United Kingdom, and the United States: 
 
 ```{r, echo=FALSE}
-UK.data <- gap.in[ which(gap.in$country=='United Kingdom'), ]
 AU.data <- gap.in[ which(gap.in$country=='Australia'), ]
+UK.data <- gap.in[ which(gap.in$country=='United Kingdom'), ]
 US.data <- gap.in[ which(gap.in$country=='United States'), ]
 
-plot(gap.in$year,
-     subset(gap.in, country=="United Kingdom"),
+plot(AU.data$year,
+     AU.data$gdpPercap,
      xlab = "year", 
      ylab = "GDP per capita", 
-     main = "GDP by year")
+     main = "AU GDP by year")
+
+plot(UK.data$year,
+     UK.data$gdpPercap,
+     xlab = "year", 
+     ylab = "GDP per capita", 
+     main = "UK GDP by year")
+
+plot(US.data$year,
+     US.data$gdpPercap,
+     xlab = "year", 
+     ylab = "GDP per capita", 
+     main = "US GDP by year")
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
