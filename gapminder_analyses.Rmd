@@ -5,14 +5,14 @@ date: "10/4/2015"
 output: html_document
 ---
 
+
+
 This is an R Markdown document. We will show data from the gapminder dataset.
 
 Below is a summary of the data:
 
-```{r}
+```{r, echo=FALSE}
 gap.in <- read.table("output/combined_gapMinder.tsv", sep="\t", header=TRUE)
-
-summary(gap.in)
 ```
 
 We are interested in GDP vs year for three countries: Australia, the United Kingdom, and the United States: 
@@ -41,4 +41,23 @@ plot(US.data$year,
      main = "US GDP by year")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Notice a similar trend for these three countries. The statistics further emphasize their similarities:
+* Australia
+  + Mean: `r mean(x = AU.data$lifeExp)`
+  + Min: `r min(x = AU.data$lifeExp)`
+  + Max: `r max(x = AU.data$lifeExp)`
+* United Kingdom
+  + Mean: `r mean(x = UK.data$lifeExp)`
+  + Min: `r min(x = UK.data$lifeExp)`
+  + Max: `r max(x = UK.data$lifeExp)`
+* United States
+  + Mean: `r mean(x = US.data$lifeExp)`
+  + Min: `r min(x = US.data$lifeExp)`
+  + Max: `r max(x = US.data$lifeExp)`
+  
+
+```{r,echo=FALSE}
+
+```
+
