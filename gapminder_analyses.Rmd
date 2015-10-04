@@ -41,8 +41,9 @@ plot(US.data$year,
      main = "US GDP by year")
 ```
 
+Notice a similar trend for these three countries.
 
-Notice a similar trend for these three countries. The statistics further emphasize their similarities:
+The statistics further emphasize their similarities:
 * Australia
   + Mean: `r mean(x = AU.data$lifeExp)`
   + Min: `r min(x = AU.data$lifeExp)`
@@ -58,6 +59,6 @@ Notice a similar trend for these three countries. The statistics further emphasi
   
 
 ```{r,echo=FALSE}
-
+hist(x = gap.in$lifeExp,xlab = "Life expectancy")
 ```
 
